@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brando AI</title>
+    
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+     <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-slate-900 text-slate-200">
+
+    <!-- Main container with split-screen layout -->
+    <div class="flex min-h-screen">
+        <!-- Left Panel: Showcase / Welcome -->
+        <div class="hidden lg:flex lg:w-1/2 showcase-gradient p-12 flex-col justify-between">
+            <div>
+                <h1 class="text-3xl font-bold text-white">Brando AI</h1>
+                <p class="text-indigo-200 mt-2">Your intelligent assistant for complex tasks.</p>
+            </div>
+            <div>
+                <h2 class="text-2xl font-semibold text-white mb-6">Start by asking anything...</h2>
+                <ul class="space-y-5 text-indigo-100">
+                    <li class="p-4 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                        <h3 class="font-semibold text-white">Explain a concept</h3>
+                        <p class="text-sm opacity-80">"Explain the basics of SQL injection in simple terms."</p>
+                    </li>
+                    <li class="p-4 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                        <h3 class="font-semibold text-white">Generate ideas</h3>
+                        <p class="text-sm opacity-80">"Brainstorm project ideas combining AI and cyber security."</p>
+                    </li>
+                    <li class="p-4 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                        <h3 class="font-semibold text-white">Write some code</h3>
+                        <p class="text-sm opacity-80">"Write a Python script to scan for open ports on a host."</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-center text-indigo-300 text-sm">
+                &copy; 2025 Brando AI. All rights reserved.
+            </div>
+        </div>
+
+        <!-- Right Panel: Authentication -->
+        <div class="w-full lg:w-1/2 bg-slate-900 flex items-center justify-center p-6 sm:p-12">
+            <div id="auth-container" class="w-full max-w-md">
+                
+                <!-- Prompt View (Visible by default) -->
+                <div id="prompt-view">
+                    <h2 class="text-3xl font-bold text-center text-white mb-2">Welcome to Brando AI</h2>
+                    <p class="text-center text-slate-400 mb-8">What's on your mind? Start here.</p>
+                    <form action="#">
+                        <div class="mb-4">
+                            <label for="prompt-input" class="sr-only">Prompt</label>
+                            <textarea id="prompt-input" rows="5" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" placeholder="e.g., Explain the difference between symmetric and asymmetric encryption..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-lg hover:shadow-indigo-600/40">
+                            Send Prompt
+                        </button>
+                    </form>
+                    <div class="flex items-center my-6">
+                        <div class="flex-grow border-t border-slate-700"></div>
+                        <span class="flex-shrink mx-4 text-slate-500 text-sm">Or</span>
+                        <div class="flex-grow border-t border-slate-700"></div>
+                    </div>
+                     <p class="text-center text-sm text-slate-400">
+                        <a href="./login.html" class="font-medium text-indigo-400 hover:text-indigo-300">Log In</a> or <a href="./signup.html" class="font-medium text-indigo-400 hover:text-indigo-300">Sign Up</a> to save your conversations.
+                    </p>
+                </div>
+
+                <!-- Login Form (Hidden by default) -->
+                <!-- <div id="login-view" class="hidden-view">
+                    <h2 class="text-3xl font-bold text-center text-white mb-2">Get Started</h2>
+                    <p class="text-center text-slate-400 mb-8">Log in or sign up to begin your session.</p>
+                    <form action="#">
+                        <div class="mb-4">
+                            <label for="login-email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                            <input type="email" id="login-email" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                        </div>
+                        <div class="mb-6">
+                            <label for="login-password" class="block text-sm font-medium text-slate-300 mb-2">Password</label>
+                            <input type="password" id="login-password" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-lg hover:shadow-indigo-600/40">
+                            Continue
+                        </button>
+                    </form>
+                    <p class="text-center text-sm text-slate-400 mt-6">
+                        Don't have an account? <a href="#" class="font-medium text-indigo-400 hover:text-indigo-300">Sign Up</a>
+                    </p>
+                </div> -->
+
+                <!-- Signup Form (Hidden by default) -->
+                <!-- <div id="signup-view" class="hidden-view">
+                    <h2 class="text-3xl font-bold text-center text-white mb-2">Create Account</h2>
+                    <p class="text-center text-slate-400 mb-8">Join us and start chatting with our AI.</p>
+                    <form action="#">
+                        <div class="mb-4">
+                            <label for="signup-username" class="block text-sm font-medium text-slate-300 mb-2">Username</label>
+                            <input type="text" id="signup-username" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                        </div>
+                        <div class="mb-4">
+                            <label for="signup-email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                            <input type="email" id="signup-email" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                        </div>
+                        <div class="mb-6">
+                            <label for="signup-password" class="block text-sm font-medium text-slate-300 mb-2">Password</label>
+                            <input type="password" id="signup-password" required class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-lg hover:shadow-indigo-600/40">
+                            Sign Up
+                        </button>
+                    </form>
+                    <p class="text-center text-sm text-slate-400 mt-6">
+                        Already have an account? <a href="" class="font-medium text-indigo-400 hover:text-indigo-300">Login</a>
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Container (Hidden by default - would be shown after login) -->
+    <div id="chat-container" class="w-full max-w-2xl h-[90vh] max-h-[700px] bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 flex-col hidden-view">
+        <!-- Chat Header -->
+        <div class="flex items-center justify-between p-4 border-b border-slate-700 flex-shrink-0">
+            <div class="flex items-center">
+                 <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center font-bold text-white text-xl mr-3">A</div>
+                 <div>
+                    <h2 class="text-lg font-bold text-white">AI Assistant</h2>
+                    <p class="text-xs text-green-400 flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-1.5"></span>Online</p>
+                 </div>
+            </div>
+            <button class="px-4 py-2 bg-slate-700 hover:bg-red-500 text-white text-sm font-medium rounded-lg transition">
+                Logout
+            </button>
+        </div>
+
+        <!-- Messages Area -->
+        <div id="chat-messages" class="flex-1 p-6 overflow-y-auto space-y-6">
+            <!-- Example AI Message -->
+            <div class="flex items-end max-w-lg w-fit self-start mr-auto">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center font-bold text-white text-sm mr-2 flex-shrink-0">A</div>
+                <div class="bg-slate-700 text-slate-200 p-3 rounded-r-xl rounded-bl-xl">
+                    <p class="text-sm">Hello! How can I assist you today?</p>
+                </div>
+            </div>
+            <!-- Example User Message -->
+            <div class="flex items-end max-w-lg w-fit self-end ml-auto">
+                <div class="order-1 bg-indigo-600 text-white p-3 rounded-l-xl rounded-br-xl">
+                    <p class="text-sm">Hi, I have a question.</p>
+                </div>
+                <div class="order-2 w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center font-bold text-white text-sm ml-2 flex-shrink-0">U</div>
+            </div>
+        </div>
+
+        <!-- Message Input -->
+        <div class="p-4 border-t border-slate-700 flex-shrink-0">
+            <form action="#" class="flex items-center space-x-4">
+                <input type="text" placeholder="Type your message..." autocomplete="off" required class="flex-1 px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold p-3 rounded-lg transition duration-300 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

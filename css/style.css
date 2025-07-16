@@ -1,0 +1,31 @@
+/* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Custom scrollbar for the chat area */
+        #chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        #chat-messages::-webkit-scrollbar-track {
+            background: #1e293b; /* slate-800 */
+        }
+        #chat-messages::-webkit-scrollbar-thumb {
+            background: #475569; /* slate-600 */
+            border-radius: 3px;
+        }
+        #chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #64748b; /* slate-500 */
+        }
+
+        /* Class to hide elements. JS is needed to toggle this. */
+        .hidden-view {
+            display: none;
+        }
+
+        /* Gradient background for the showcase panel */
+        .showcase-gradient {
+            background: linear-gradient(135deg, #1e3a8a, #3b0764);
+        }
