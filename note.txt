@@ -1,0 +1,12 @@
+phase 1: 
+learn: 
+    - react 
+
+prerequisties; 
+    - html 
+    - css
+    - javascript 
+    - typescript 
+
+
+    - flask 
